@@ -1,9 +1,6 @@
 import { Card, CardContent } from "./ui/card";
-import { humanDuration, naturalTime } from "@/lib/utils";
 
 import { Badge } from "./ui/badge";
-import { CalendarIcon } from "@radix-ui/react-icons";
-import LikeButton from "./like-button";
 import Link from "next/link";
 import React from "react";
 import Thumbnail from "./thumbnail";
@@ -17,14 +14,10 @@ const VideoCard = ({ video }: any) => {
                     title={`Watch ${video.title}`}
                     >
                 <Thumbnail
-                    single_img={video.single_img}
-                    splash_img={video.splash_img}
+                    thumbnail={video.thumbnail}
                     title={video.title}
                 />
                 </Link>
-                <Badge className="absolute bottom-1 right-1 px-1 bg-black bg-opacity-65">
-                    {humanDuration(video.length)}
-                </Badge>
             </div>
             <CardContent className="p-1.5"><h3>
                 <Link
